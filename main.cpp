@@ -215,48 +215,57 @@ int main() {
   cout << "Um deles, alto, cansado e claramente pressionado, aproxima-se rapidamente." << endl;
   cin >> continuar;
 
-  cout << "-- Detetive Holmes... grazas a Deus chegou." << endl;
+  cout<<"== Policial 1 =="<<endl;
+  cout << "-- Detetive Holmes... graças a Deus chegou." << endl;
   cin >> continuar;
 
   cout << "Ele estende a mao." << endl;
   cin >> continuar;
 
+  cout<<"== Inspetor Carter =="<<endl;
   cout << "-- Inspetor William Carter." << endl;
   cin >> continuar;
 
   cout << "Ao lado dele, um homem mais jovem mantem expressao seria." << endl;
   cin >> continuar;
 
+  cout<<"== Oficial Miller =="<<endl;
   cout << "-- Oficial David Miller." << endl;
   cin >> continuar;
 
   cout << "William respira fundo antes de continuar." << endl;
   cin >> continuar;
 
-  cout << "-- O patriarca da familia foi brutalmente assassinado ha cerca de uma hora." << endl;
+  cout<<"== Inspetor Carter =="<<endl;
+  cout << "-- O patriarca da familia, Raymond Whitmore, foi brutalmente assassinado ha cerca de uma hora." << endl;
   cin >> continuar;
 
+  cout<<"== Inspetor Carter =="<<endl;
   cout << "-- Nao encontramos sinais de arrombamento. Nenhuma testemunha. Nenhuma pista concreta." << endl;
   cin >> continuar;
 
   cout << "William encara Holmes." << endl;
   cin >> continuar;
 
+  cout<<"== Inspetor Carter =="<<endl;
   cout << "-- Mas quem fez isso... sabia exatamente o que estava fazendo." << endl;
   cin >> continuar;
 
   cout << "David abre a porta da residencia." << endl;
   cin >> continuar;
 
+  cout<<"== Oficial Miller =="<<endl;
   cout << "-- Os familiares estao reunionados na sala de estar. Ninguem saiu da casa desde nossa chegada." << endl;
   cin >> continuar;
 
+  cout<<"== Oficial Miller =="<<endl;
   cout << "-- O corpo esta na cozinha." << endl;
   cin >> continuar;
 
   cout << "Sherlock apenas ajeita o casaco." << endl;
   cin >> continuar;
 
+  cout<<"== Sherlock =="<<endl;
   cout << "-- Naturalmente esta." << endl;
   cin >> continuar;
 
