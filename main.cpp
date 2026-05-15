@@ -579,6 +579,41 @@ void interrogationScene(){
 }
 
 
+//---------------[Final]---------------
+void bestEnding(){
+  cout << "Sherlock reunia todos." << endl;
+  next();
+
+  cout << "E explica:" << endl;
+  cout << "- as facadas eram exageradas demais;" << endl;
+  cout << "- a cena foi manipulada;" << endl;
+  cout << "- o assassino era menor;" << endl;
+  cout << "- alguém lavou as maos;" << endl;
+  cout << "- passos leves;" << endl;
+  cout << "- ausencia de emocao genuina." << endl;
+  next();
+
+  cout << "Entao Holmes encara Violet." << endl;
+  next();
+
+  cout << "E ela..." << endl;
+  next();
+
+  cout << "sorri." << endl;
+  next();
+
+  cout << "Não porque foi pega." << endl;
+  next();
+
+  cout << "Mas porque:" << endl;
+  cout << "finalmente encontrou alguém capaz de entendê-la." << endl;
+  next();
+
+  cout << endl << "===== FIM =====" << endl;
+};
+
+
+
 
 
 
