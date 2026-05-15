@@ -339,6 +339,245 @@ void crimeScene(){
   next();
 }
 
+//---------------[Interrogatórios]---------------
+void eleanorInterrogation(){
+  cout << endl << "=== A ESPOSA -- ELEANOR WHITMORE ===" << endl;
+  
+  cout << "Elegante." << endl;
+  cout << "Olhos cansados." << endl;
+  cout << "Maos tremulas." << endl;
+  
+  next();
+  
+  cout << "Pergunta: Como era sua relacao com seu marido?" << endl;
+  
+  cout << "-- Distante... ultimamente muito distante." << endl;
+  cout << "-- Ele nao ficava em casa." << endl;
+  cout << "-- Vivia voltando tarde do trabalho." << endl;
+  
+  next();
+  
+  cout << "Ela evita olhar diretamente para Holmes." << endl;
+  
+  next();
+  
+  cout << "Pergunta: A senhora suspeitava de traicao?" << endl;
+  
+  cout << "Ela demora alguns segundos para responder." << endl;
+  
+  cout << "-- Um pouco." << endl;
+  
+  next();
+  
+  cout << "Ela projeta um olhar arrependido." << endl;
+  
+  next();
+  
+  cout << "Pergunta: Onde estava durante o assassinato?" << endl;
+  
+  cout << "-- No meu quarto." << endl;
+  cout << "-- Estou enfrentando insonia recentemente." << endl;
+  cout << "-- Tenho tomado remedios para dormir." << endl;
+  
+  next();
+  
+  cout << "Watson observa atentamente." << endl;
+  
+  next();
+  
+  cout << "Ela nao aparenta estar sob efeito de sedativos." << endl;
+  
+  next();
+}
+void arthurInterrogation(){
+  cout << endl << "=== FILHO MAIS VELHO -- ARTHUR WHITMORE ===" << endl;
+
+  cout << "Controlado." << endl;
+  cout << "Ambicioso." << endl;
+  cout << "Frio." << endl;
+
+  next();
+
+  cout << "Pergunta: Voce queria assumir a empresa?" << endl;
+
+  cout << "Ele responde rapidamente." << endl;
+
+  cout << "-- Alguem precisava assumir eventualmente!" << endl;
+  cout << "-- Meu pai nao poderia continuar para sempre." << endl;
+
+  next();
+
+  cout << "Pergunta: Seu pai pretendia mudar o testamento?" << endl;
+
+  cout << "Arthur hesita por um breve instante." << endl;
+
+  cout << "-- Nao." << endl;
+  cout << "-- Nao que eu saiba." << endl;
+
+  next();
+
+  cout << "Ele encara Eleanor por alguns segundos." << endl;
+
+  next();
+
+  cout << "Ela desvia o olhar." << endl;
+
+  next();
+
+  cout << "Pergunta: Voces discutiram hoje?" << endl;
+
+  cout << "-- Sim." << endl;
+  cout << "-- Mas nao foi nada fora do normal." << endl;
+
+  next();
+
+  cout << "Ele fecha os punhos." << endl;
+
+  cout << "-- Se acha que eu mataria meu proprio pai..." << endl;
+  cout << "-- entao esta completamente maluco." << endl;
+
+  next();
+}
+void edwardInterrogation(){
+  cout << endl << "=== FILHO DO MEIO -- EDWARD WHITMORE ===" << endl;
+
+  cout << "Nervoso." << endl;
+  cout << "Ansioso." << endl;
+  cout << "Instavel." << endl;
+
+  next();
+
+  cout << "Pergunta: Voce tinha problemas com seu pai?" << endl;
+
+  cout << "-- Ele nunca me respeitou." << endl;
+  cout << "-- Sempre comparava tudo o que eu fazia com Arthur." << endl;
+
+  next();
+
+  cout << "Os olhos dele demonstram ressentimento." << endl;
+
+  next();
+
+  cout << "Pergunta: Onde estava durante o assassinato?" << endl;
+
+  cout << "-- No jardim." << endl;
+
+  next();
+
+  cout << "Pergunta: Fazendo o que?" << endl;
+
+  cout << "-- Pensando." << endl;
+  cout << "-- Eu ouvi a discussao..." << endl;
+  cout << "-- Nao queria participar daquilo." << endl;
+
+  next();
+
+  cout << "Holmes percebe cheiro de cigarro em sua roupa." << endl;
+
+  next();
+
+  cout << "Pergunta: Voce ouviu alguma coisa suspeita?" << endl;
+
+  cout << "-- Passos." << endl;
+  cout << "-- Alguem andando rapido pelo corredor." << endl;
+  cout << "-- Mas nao consegui ver quem era." << endl;
+
+  next();
+}
+void violetInterrogation(){
+  cout << endl << "=== FILHA CACULA -- VIOLET WHITMORE ===" << endl;
+
+  cout << "Calma demais." << endl;
+  cout << "Esse e o problema." << endl;
+
+  next();
+
+  cout << "Pergunta: Voce gostava do seu pai?" << endl;
+
+  cout << "Ela sorri discretamente." << endl;
+
+  cout << "-- Muito." << endl;
+  cout << "-- Nossa relacao era maravilhosa." << endl;
+
+  next();
+
+  cout << "Pergunta: Esta triste?" << endl;
+
+  cout << "Ela encara Holmes em silencio." << endl;
+
+  cout << "-- E como nao estaria?" << endl;
+
+  next();
+
+  cout << "Sherlock observa atentamente." << endl;
+
+  next();
+
+  cout << "Ela fala sobre tristeza." << endl;
+  cout << "Mas nao demonstra nenhuma." << endl;
+
+  next();
+
+  cout << "Pergunta: O que acha que aconteceu?" << endl;
+
+  cout << "-- Acho que alguem finalmente perdeu o medo dele." << endl;
+
+  next();
+
+  cout << "A sala inteira permanece em silencio por alguns segundos." << endl;
+
+  next();
+}
+void alfredInterrogation(){
+  cout << endl << "=== MORDOMO -- ALFRED ===" << endl;
+
+  cout << "Velho." << endl;
+  cout << "Exausto." << endl;
+  cout << "Amargurado." << endl;
+
+  next();
+
+  cout << "Pergunta: Como Raymond o tratava?" << endl;
+
+  cout << "-- Como mobilia." << endl;
+  cout << "-- Eu servia a esta familia ha mais de vinte anos." << endl;
+
+  next();
+
+  cout << "Pergunta: O senhor ouviu algo?" << endl;
+
+  cout << "-- Passos rapidos no corredor." << endl;
+
+  next();
+
+  cout << "Pergunta: Reconheceu os passos?" << endl;
+
+  cout << "Ele hesita." << endl;
+
+  cout << "-- Leves demais para serem de um homem." << endl;
+
+  next();
+
+  cout << "Holmes permanece em silencio." << endl;
+
+  next();
+}
+void interrogationScene(){
+  cout << endl << "=== SALA DE INTERROGATORIO ===" << endl;
+
+  next();
+
+  eleanorInterrogation();
+
+  arthurInterrogation();
+
+  edwardInterrogation();
+
+  violetInterrogation();
+
+  alfredInterrogation();
+}
+
 
 
 
