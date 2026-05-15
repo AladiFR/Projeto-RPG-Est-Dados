@@ -4,13 +4,19 @@ using namespace std;
 
 const int MAX_VERTICES = 5;
 
+//---------------[Struct]---------------
 struct Clue { //Estrutura da Pista
   int idClue;
+  
+  string title;
   string description;
   string question;
-  string correctReponse;
-  bool resolvida;
-  bool descoberta;
+  string options[4];
+  int correctReponse;
+  
+  bool resolvida = false;
+  bool descoberta = false;
+  bool realClue = false;
 };
 
 class TabelaHash {
