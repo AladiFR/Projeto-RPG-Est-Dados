@@ -19,6 +19,14 @@ struct Clue { //Estrutura da Pista
   bool realClue = false;
 };
 
+//---------------[Auxiliar]---------------
+void next(){ //Função pra pausa
+
+    string continuar;
+    getline(cin, continuar);
+}
+
+
 //---------------[Classes]---------------
 class TabelaHash{
   private:
@@ -294,7 +302,6 @@ void showDeduction(Grafo &graph, string clueKey){
     }
 }
 
-string continuar;
 
 int main() {
   TabelaHash table;
