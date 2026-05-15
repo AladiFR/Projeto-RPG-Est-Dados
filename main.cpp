@@ -19,8 +19,9 @@ struct Clue { //Estrutura da Pista
   bool realClue = false;
 };
 
-class TabelaHash {
-private:
+//---------------[Classes]---------------
+class TabelaHash{
+  private:
     static const int MAX = 10;
 
     struct No{ //Estrutura de entrada
@@ -46,12 +47,12 @@ private:
       return sum % MAX;
     }
 
-public:
-  TabelaHash() {
-    for (int i = 0; i < MAX; i++) {
-      tableHash[i] = NULL;
+  public:
+    TabelaHash() {
+      for (int i = 0; i < MAX; i++) {
+        tableHash[i] = NULL;
+      }
     }
-  }
 
     void input(string key, Clue value) {
       int position = funcaoHash(key);
@@ -106,15 +107,14 @@ public:
       }
     }
 };
-
 class Grafo{
-    public:
-        Grafo(){
-            numVertices = 0;                          
-            for(int i = 0; i < MAX_VERTICES; i++){
-                vertices[i] = NULL;
-            }
-        }
+  public:
+      Grafo(){
+          numVertices = 0;                          
+          for(int i = 0; i < MAX_VERTICES; i++){
+              vertices[i] = NULL;
+          }
+      }
   private:           
     struct No{
       string idClue;
@@ -158,7 +158,7 @@ class Grafo{
       }
     }
     
-    void showConnections(int v){
+    void showConnections(int v){ //Exibindo coneções 
         No* present = vertices[v];
         
         cout << "Ligações entre as pistas:"<< present->idClue << endl;
@@ -167,8 +167,31 @@ class Grafo{
             cout<< present->connection[i]->idClue << endl;
         }
     }
+    
+    void showReasoningLine(string clueKey){ //Exibindo linha de raciocínio visualmente com grafo
+      for(int i = 0; i < numVertices; i++){
+          if(vertices[i]->idClue == clueKey){
+              cout << "\nLinha de raciocinio:\n\n";
+
+              cout << vertices[i]->idClue;
+
+              No* current = vertices[i];
+
+              while(current->numConnections > 0){
+                  current = current->connection[0];
+                  cout << " -> " << current->idClue;
+              }
+
+              cout << endl;
+              return;
+          }
+      }
+}
 
 };
+void showDeduction(Grafo &graph, string clueKey);
+
+
 
 bool checkAnswer(Clue pista){
     string reponse;
