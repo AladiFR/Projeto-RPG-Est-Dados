@@ -612,6 +612,82 @@ void bestEnding(){
   cout << endl << "===== FIM =====" << endl;
 };
 
+//---------------[Menus Acusações]---------------
+void kitchenMenu(TabelaHash &table, Grafo &graph,Clue inventory[], int &totalClues, int &realCluesSolved){ //Menu da cena da cozinha
+  int opt = 0;
+  
+  do{
+    cout<<"[COZINHA]\n"<< endl;
+    
+    cout << "1 - Examinar faca\n2 - Examinar corte\n3 - Examinar cabo da faca\n4 - Examinar corpo da vitma\n5 - Examinar vestigios na porta da cozinha\n6 - Falar com empregados\n7 - Examinar lixeira\n8 - Ver pistas\n9 - Acusacao\n0 - Encerrar Investigacao" << endl;
+    cin >> opt;
+    cin.ignore();
+      
+    switch(opt){
+      case 1:
+        investigateClue(table, graph, "P1",inventory, totalClues, realCluesSolved);
+        break;
+          
+      case 2:
+        investigateClue(table, graph, "P2",inventory, totalClues, realCluesSolved);
+        break;
+          
+      case 3:
+        investigateClue(table, graph, "P3",inventory, totalClues, realCluesSolved);
+        break;
+          
+      case 4:
+        investigateClue(table, graph, "P4",inventory, totalClues, realCluesSolved);
+        break;
+
+      case 5:
+        investigateClue(table, graph, "P5",inventory, totalClues, realCluesSolved);
+        break;
+          
+      case 6:
+        investigateClue(table, graph, "P6",inventory, totalClues, realCluesSolved);
+        break;
+          
+      case 7:
+        investigateClue(table, graph, "P7",inventory, totalClues, realCluesSolved);
+        break;
+      
+      case 8:
+        showInventory(inventory, totalClues);
+        break;
+          
+      case 9:
+        if(realCluesSolved >= 3){
+          accusationMenu();
+        }else{
+          cout << "\nHolmes ainda nao possui evidencias suficientes.\n";
+        }
+        break;
+          
+      default:
+        cout << "Investigação encerrada." << endl;
+    }
+  } while(opt != 0);
+}
+void accusationMenu(){ //Cena de acusação
+  int opt = 0;
+
+  cout << "\nQuem e o assassino?\n";
+  cout << "1 - Eleanor\n2 - Arthur\n3 - Edward\n4 - Violet\n5 - Alfred\n";
+
+  cin >> opt;
+
+  if(opt == 4){
+    cout << "\nSherlock observa Violet em silencio...\n";
+    cout << "Ela sorri.\n";
+    
+    bestEnding();
+  }
+  else{
+    cout << "\nHolmes fecha os olhos.\n";
+    cout << "A acusacao nao se sustenta.\n";
+  }
+}
 
 
 
