@@ -186,11 +186,35 @@ class Grafo{
               return;
           }
       }
-}
+    }
 
 };
 void showDeduction(Grafo &graph, string clueKey);
 
+//---------------[Inventário]---------------
+void addInventory(Clue inventory[],int &totalClues,Clue clue){
+  inventory[totalClues] = clue;
+  totalClues++;
+
+  cout << "\n[Pista adicionada ao inventario]\n";
+}
+void showInventory(Clue inventory[],int totalClues){
+  cout << "\n===== INVENTARIO DE PISTAS =====\n";
+
+  if(totalClues == 0){
+    cout << "Nenhuma pista encontrada.\n";
+    return;
+  }
+
+  for(int i = 0; i < totalClues; i++){
+
+    cout << "\n[" << inventory[i].title << "]\n";
+
+    cout << inventory[i].description << endl;
+  }
+
+  cout << endl;
+}
 
 
 bool checkAnswer(Clue pista){
