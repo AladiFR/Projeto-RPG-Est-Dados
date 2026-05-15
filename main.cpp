@@ -26,7 +26,6 @@ void next(){ //Função pra pausa
     getline(cin, continuar);
 }
 
-
 //---------------[Classes]---------------
 class TabelaHash{
   private:
