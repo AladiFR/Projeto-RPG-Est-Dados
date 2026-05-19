@@ -3,6 +3,7 @@
 using namespace std;
 
 const int MAX_VERTICES = 5;
+int op;
 
 //---------------[Struct]---------------
 struct Clue { //Estrutura da Pista
@@ -304,283 +305,586 @@ void showDeduction(Grafo &graph, string clueKey){
 //---------------[História]---------------
 void introStory(){
   cout << "===== INVESTIGACAO POLICIAL =====" << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "Londres -- 15 de Janeiro de 2010, 22:20" << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
-  cout << "A chuva fina castigava as ruas de Londres..." << endl;
+  cout << "A chuva fina castigava as ruas de Londres, a névoa envolvia os postes de luz, transformando o brilho amarelado em manchas fantasmagóricas no asfalto molhado." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
-  cout << "Dentro de um taxi escuro..." << endl;
+  cout << "Dentro de um táxi escuro, Sherlock Holmes observava silenciosamente o lado de fora enquanto John Watson terminava de vestir suas luvas." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "O veiculo desacelera." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
-  cout << "A frente, uma enorme residencia vitoriana..." << endl;
+  cout << "À frente, uma enorme residência vitoriana cercada por grades negras emerge da neblina." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
+
+  cout<<"Luzes policiais iluminam a fachada.\nDuas viaturas.\nUma ambulância."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout<<"Assim que descem do carro, um policial os aguarda próximo à entrada principal."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout<<"Ele estende a mão."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout<<"=== Policial ==="<<endl;
+  cout<<"— Boa noite, Detetive Holmes e Doutor Watson, sou o inspetor William Carter."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout<<"=== Inspetor Carter ==="<<endl;
+  cout<<"— O patriarca da família foi brutalmente assassinado há cerca de uma hora."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout<<"=== Inspetor Carter ==="<<endl;
+  cout<<"— Não encontramos sinais de arrombamento. Nenhuma testemunha. Nenhuma pista concreta."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout<<"=== Inspetor Carter ==="<<endl;
+  cout<<"— Mas quem fez isso… sabia exatamente o que estava fazendo."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout<<"=== Inspetor Carter ==="<<endl;
+  cout<<"— Os familiares estão reunidos na sala de estar. Ninguém saiu da casa desde nossa chegada. O corpo está na cozinha."<<endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
 }
 void crimeScene(){
   cout << endl << "=== CENA DO CRIME -- COZINHA ===" << endl;
-  next();
 
-  cout << "Ao entrarem, o cheiro-metalico do sangue..." << endl;
+  cout << "Ao entrarem, o cheiro metálico do sangue domina imediatamente o ambiente." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "A cozinha luxuosa parece congelada no tempo." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
-  cout << "No centro da cozinha..." << endl;
+  cout << "No centro da cozinha…" << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "o corpo." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
+
+  cout << "Um homem de meia idade, elegante, caído ao lado da ilha central." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout << "A camisa social branca está completamente tingida de vermelho." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout << "Uma faca de cozinha permanece cravada em seu peito." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout << "Ao redor do corpo:" << endl;
+  cout << "sangue." << endl;
+  cout << "Pegadas borradas." << endl;
+  cout << "Marcas de luta." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout << "Watson se aproxima lentamente." << endl;
+  
+  cout<<"=== Watson ==="<<endl;
+  cout << "— Meu Deus…" << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
+
+  cout << "Sherlock permanece em silêncio. Observando. Calculando." << endl;
+  cout << "Para prosseguir apere Enter" << endl;
+  next();
+
+  while(op!=0){
+    cout << "Pistas:" << endl;
+    cout << " 1. Pista A" << endl;
+    cout << " 2. Pista B" << endl;
+    cout << " 3. Pista C" << endl;
+    cout << " 4. Pista D" << endl;
+    cout << " 5. Pista E" << endl;
+    cout << " 6. Pista F" << endl;
+    cout << " 0. Se retirar" << endl;
+    cin<<op;
+
+    switch(op){
+      case 1:
+        
+    }
+  }
+  
+  
 }
 
 //---------------[Interrogatórios]---------------
 void eleanorInterrogation(){
   cout << endl << "=== A ESPOSA -- ELEANOR WHITMORE ===" << endl;
   
+  cout<<"=== Características ==="<<endl;
   cout << "Elegante." << endl;
   cout << "Olhos cansados." << endl;
   cout << "Maos tremulas." << endl;
   
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
-  
-  cout << "Pergunta: Como era sua relacao com seu marido?" << endl;
-  
-  cout << "-- Distante... ultimamente muito distante." << endl;
-  cout << "-- Ele nao ficava em casa." << endl;
-  cout << "-- Vivia voltando tarde do trabalho." << endl;
-  
-  next();
-  
-  cout << "Ela evita olhar diretamente para Holmes." << endl;
-  
-  next();
-  
-  cout << "Pergunta: A senhora suspeitava de traicao?" << endl;
-  
-  cout << "Ela demora alguns segundos para responder." << endl;
-  
-  cout << "-- Um pouco." << endl;
-  
-  next();
-  
-  cout << "Ela projeta um olhar arrependido." << endl;
-  
-  next();
-  
-  cout << "Pergunta: Onde estava durante o assassinato?" << endl;
-  
-  cout << "-- No meu quarto." << endl;
-  cout << "-- Estou enfrentando insonia recentemente." << endl;
-  cout << "-- Tenho tomado remedios para dormir." << endl;
-  
-  next();
-  
-  cout << "Watson observa atentamente." << endl;
-  
-  next();
-  
-  cout << "Ela nao aparenta estar sob efeito de sedativos." << endl;
-  
-  next();
+  op = -1;
+  while(op!=0){
+    cout << "Perguntas:" << endl;
+    cout<<" 1. Como era sua relacao com seu marido?" << endl;
+    cout <<" 2. A senhora suspeitava de traicao?" << endl;
+    cout <<" 3. Onde estava durante o assassinato?" << endl;
+    cout<<" 0. Se retirar"<<endl;
+    cin>>op;
+
+    switch(op){
+      case 1:
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "-- Distante... ultimamente muito distante." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "-- Ele nao ficava em casa." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "-- Vivia voltando tarde do trabalho." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "Ela evita olhar diretamente para Holmes." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+      break;
+    
+      case 2:
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;    
+        cout << "Ela demora alguns segundos para responder." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "-- Um pouco." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "Ela projeta um olhar arrependido." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
+      
+      case 3:
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "-- No meu quarto." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "-- Estou enfrentando insonia recentemente." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ELEANOR WHITMORE ==="<<endl;
+        cout << "-- Tenho tomado remedios para dormir." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
+
+      case 0:
+        cout<<"=== Sherlock Holmes ==="<<endl;
+        cout<<"-- Tudo bem."<<endl;
+
+      default:
+        cout<<"Opção inválida"<<endl;
+        cout<<"Tente novamente"<<endl;
+        break;
+    }
+  }
 }
 void arthurInterrogation(){
   cout << endl << "=== FILHO MAIS VELHO -- ARTHUR WHITMORE ===" << endl;
 
+  cout<<"=== Características ==="<<endl;
   cout << "Controlado." << endl;
   cout << "Ambicioso." << endl;
   cout << "Frio." << endl;
 
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
+  op = -1;
+  while(op!=0){
+    cout << "Perguntas:" << endl;
+    cout<<" 1. Voce queria assumir a empresa?" << endl;
+    cout<<" 2. Seu pai pretendia mudar o testamento?" << endl;
+    cout<<" 3. Voces discutiram hoje?" << endl;
+    cout<<" 0. Se retirar"<<endl;
+    cin>>op;
 
-  cout << "Pergunta: Voce queria assumir a empresa?" << endl;
+    switch(op){
+      case 1:
+        cout << "Ele responde rapidamente." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- Alguem precisava assumir eventualmente!" << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- Meu pai nao poderia continuar para sempre." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
+      
+      case 2:
+        cout << "Arthur hesita por um breve instante." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- Nao." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- Nao que eu saiba." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout << "Arthur encara Eleanor por alguns segundos." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "Ela desvia o olhar." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "Ele responde rapidamente." << endl;
+      case 3:
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- Sim." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- Mas nao foi nada fora do normal." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout << "Arthur fecha os punhos." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- Se acha que eu mataria meu proprio pai..." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ARTHUR WHITMORE ==="<<endl;
+        cout << "-- entao esta completamente maluco." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "-- Alguem precisava assumir eventualmente!" << endl;
-  cout << "-- Meu pai nao poderia continuar para sempre." << endl;
+      case 0:
+        cout<<"=== Sherlock Holmes ==="<<endl;
+        cout<<"-- Tudo bem."<<endl;
+        break;
 
-  next();
-
-  cout << "Pergunta: Seu pai pretendia mudar o testamento?" << endl;
-
-  cout << "Arthur hesita por um breve instante." << endl;
-
-  cout << "-- Nao." << endl;
-  cout << "-- Nao que eu saiba." << endl;
-
-  next();
-
-  cout << "Ele encara Eleanor por alguns segundos." << endl;
-
-  next();
-
-  cout << "Ela desvia o olhar." << endl;
-
-  next();
-
-  cout << "Pergunta: Voces discutiram hoje?" << endl;
-
-  cout << "-- Sim." << endl;
-  cout << "-- Mas nao foi nada fora do normal." << endl;
-
-  next();
-
-  cout << "Ele fecha os punhos." << endl;
-
-  cout << "-- Se acha que eu mataria meu proprio pai..." << endl;
-  cout << "-- entao esta completamente maluco." << endl;
-
-  next();
+      default:
+        cout<<"Opção inválida"<<endl;
+        cout<<"Tente novamente"<<endl;
+        break;
+    }
+  }
 }
 void edwardInterrogation(){
   cout << endl << "=== FILHO DO MEIO -- EDWARD WHITMORE ===" << endl;
 
+  cout<<"=== Características ==="<<endl;
   cout << "Nervoso." << endl;
   cout << "Ansioso." << endl;
   cout << "Instavel." << endl;
 
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
+  op = -1;
+  while(op!=0){
+    cout << "Perguntas:" << endl;
+    cout<<" 1. Voce tinha problemas com seu pai?" << endl;
+    cout<<" 2. Onde estava durante o assassinato?" << endl;
+    cout<<" 3. Fazendo o que?" << endl;
+    cout<<" 4. Voce ouviu alguma coisa suspeita?" << endl;
+    cout<<" 0. Se retirar"<<endl;
+    cin>>op;
 
-  cout << "Pergunta: Voce tinha problemas com seu pai?" << endl;
+    switch(op){
+      case 1:
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Ele nunca me respeitou." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Sempre comparava tudo o que eu fazia com Arthur." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "Os olhos dele demonstram ressentimento." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
+      
+      case 2:
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- No jardim." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "-- Ele nunca me respeitou." << endl;
-  cout << "-- Sempre comparava tudo o que eu fazia com Arthur." << endl;
+      case 3:
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Pensando." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Eu ouvi a discussao..." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Nao queria participar daquilo." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout << "Holmes percebe um cheiro de cigarro em sua roupa." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  next();
+      case 4:
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Passos." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Alguem andando rapido pelo corredor." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== EDWARD WHITMORE ==="<<endl;
+        cout << "-- Mas nao consegui ver quem era." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "Os olhos dele demonstram ressentimento." << endl;
-
-  next();
-
-  cout << "Pergunta: Onde estava durante o assassinato?" << endl;
-
-  cout << "-- No jardim." << endl;
-
-  next();
-
-  cout << "Pergunta: Fazendo o que?" << endl;
-
-  cout << "-- Pensando." << endl;
-  cout << "-- Eu ouvi a discussao..." << endl;
-  cout << "-- Nao queria participar daquilo." << endl;
-
-  next();
-
-  cout << "Holmes percebe cheiro de cigarro em sua roupa." << endl;
-
-  next();
-
-  cout << "Pergunta: Voce ouviu alguma coisa suspeita?" << endl;
-
-  cout << "-- Passos." << endl;
-  cout << "-- Alguem andando rapido pelo corredor." << endl;
-  cout << "-- Mas nao consegui ver quem era." << endl;
-
-  next();
+      case 0:
+        cout<<"=== Sherlock Holmes ==="<<endl;
+        cout<<"-- Tudo bem."<<endl;
+        break;
+      
+      default:
+        cout<<"Opção inválida"<<endl;
+        cout<<"Tente novamente"<<endl;
+        break;
+    }
+  }
 }
 void violetInterrogation(){
   cout << endl << "=== FILHA CACULA -- VIOLET WHITMORE ===" << endl;
 
+  cout<<"=== Características ==="<<endl;
   cout << "Calma demais." << endl;
-  cout << "Esse e o problema." << endl;
 
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
+  op = -1;
+  while(op!=0){
+    cout << "Perguntas:" << endl;
+    cout<<" 1. Voce gostava do seu pai?" << endl;
+    cout<<" 2. Esta triste?" << endl;
+    cout<<" 3. O que acha que aconteceu?" << endl;
+    cout<<" 0. Se retirar"<<endl;
+    cin>>op;
 
-  cout << "Pergunta: Voce gostava do seu pai?" << endl;
+    switch(op){
+      case 1:
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "Ela sorri discretamente." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "-- Muito." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "-- Nossa relacao era maravilhosa." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "Ela sorri discretamente." << endl;
+      case 2:
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "Ela encara Holmes em silencio." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "-- E como nao estaria?" << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "Sherlock observa atentamente." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "Ela fala sobre tristeza." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "Mas nao demonstra nenhuma." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "-- Muito." << endl;
-  cout << "-- Nossa relacao era maravilhosa." << endl;
+      case 3:
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "-- Acho que alguem finalmente perdeu o medo dele." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== VIOLET WHITMORE ==="<<endl;
+        cout << "A sala inteira permanece em silencio por alguns segundos." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  next();
-
-  cout << "Pergunta: Esta triste?" << endl;
-
-  cout << "Ela encara Holmes em silencio." << endl;
-
-  cout << "-- E como nao estaria?" << endl;
-
-  next();
-
-  cout << "Sherlock observa atentamente." << endl;
-
-  next();
-
-  cout << "Ela fala sobre tristeza." << endl;
-  cout << "Mas nao demonstra nenhuma." << endl;
-
-  next();
-
-  cout << "Pergunta: O que acha que aconteceu?" << endl;
-
-  cout << "-- Acho que alguem finalmente perdeu o medo dele." << endl;
-
-  next();
-
-  cout << "A sala inteira permanece em silencio por alguns segundos." << endl;
-
-  next();
+      case 0:
+        cout<<"=== Sherlock Holmes ==="<<endl;
+        cout<<"-- Tudo bem."<<endl;
+        break;
+      
+      default:
+        cout<<"Opção inválida"<<endl;
+        cout<<"Tente novamente"<<endl;
+        break;
+    }
+  }
 }
 void alfredInterrogation(){
   cout << endl << "=== MORDOMO -- ALFRED ===" << endl;
 
+  cout<<"=== Características ==="<<endl;
   cout << "Velho." << endl;
   cout << "Exausto." << endl;
   cout << "Amargurado." << endl;
 
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
+  op = -1;
+  while(op!=0){
+    cout << "Perguntas:" << endl;
+    cout<<" 1. Como Raymond o tratava?" << endl;
+    cout<<" 2. O senhor ouviu algo?" << endl;
+    cout<<" 3. Reconheceu os passos?" << endl;
+    cout<<" 0. Se retirar"<<endl;
+    cin>>op;
 
-  cout << "Pergunta: Como Raymond o tratava?" << endl;
+    switch(op){
+      case 1:
+        cout<<"=== ALFRED ==="<<endl;
+        cout << "-- Como mobilia." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ALFRED ==="<<endl;
+        cout << "-- Eu servia a esta familia ha mais de vinte anos." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "-- Como mobilia." << endl;
-  cout << "-- Eu servia a esta familia ha mais de vinte anos." << endl;
+      case 2:
+        cout<<"=== ALFRED ==="<<endl;
+        cout << "-- Passos rapidos no corredor." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  next();
+      case 3:
+        cout<<"=== ALFRED ==="<<endl;
+        cout << "Ele hesita." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ALFRED ==="<<endl;
+        cout << "-- Leves demais para serem de um homem." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        cout<<"=== ALFRED ==="<<endl;
+        cout << "Holmes permanece em silencio." << endl;
+        cout << "\nPara prosseguir aperte Enter..." << endl;
+        next();
+        break;
 
-  cout << "Pergunta: O senhor ouviu algo?" << endl;
-
-  cout << "-- Passos rapidos no corredor." << endl;
-
-  next();
-
-  cout << "Pergunta: Reconheceu os passos?" << endl;
-
-  cout << "Ele hesita." << endl;
-
-  cout << "-- Leves demais para serem de um homem." << endl;
-
-  next();
-
-  cout << "Holmes permanece em silencio." << endl;
-
-  next();
+      case 0:
+        cout<<"=== Sherlock Holmes ==="<<endl;
+        cout<<"-- Tudo bem."<<endl;
+        break;
+      
+      default:
+        cout<<"Opção inválida"<<endl;
+        cout<<"Tente novamente"<<endl;
+        break;
+    }
+  }
 }
 void interrogationScene(){
-  cout << endl << "=== SALA DE INTERROGATORIO ===" << endl;
-
+  cout << endl << "=== INTERROGATORIO ===" << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
+  
+  op = -1;
+  while(op != 0){
+    cout<<"Suspeitos: "<<endl;
+    cout<<" 1. Eleanor - Esposa"<<endl;
+    cout<<" 2. Arthur - Filho mais velho"<<endl;
+    cout<<" 3. Edward - Filho do meio"<<endl;
+    cout<<" 4. Violet - Filha"<<endl;
+    cout<<" 5. Alfred - Mordomo"<<endl;
+    cout<<"Opção: ";
+    cin>> op;
 
-  eleanorInterrogation();
-
-  arthurInterrogation();
-
-  edwardInterrogation();
-
-  violetInterrogation();
-
-  alfredInterrogation();
+    switch(op){
+      case 1:
+        eleanorInterrogation();
+        break;
+      case 2:
+        arthurInterrogation();
+        break;
+      case 3:
+        edwardInterrogation();
+        break;
+      case 4:
+        violetInterrogation();
+        break;
+      case 5:
+        alfredInterrogation();
+        break;
+      case 0:
+        cout<<"Saindo"<<endl;
+        break;
+      default:
+          cout<<"Opção inválida"<<endl;
+          cout<<"Tente novamente"<<endl;
+          break;
+    }
+  }
 }
 
 
 //---------------[Final]---------------
 void bestEnding(){
   cout << "Sherlock reunia todos." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "E explica:" << endl;
@@ -590,28 +894,53 @@ void bestEnding(){
   cout << "- alguém lavou as maos;" << endl;
   cout << "- passos leves;" << endl;
   cout << "- ausencia de emocao genuina." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "Entao Holmes encara Violet." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "E ela..." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "sorri." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "Não porque foi pega." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "Mas porque:" << endl;
   cout << "finalmente encontrou alguém capaz de entendê-la." << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << endl << "===== FIM =====" << endl;
 };
 
 //---------------[Menus Acusações]---------------
+void accusationMenu(){ //Cena de acusação
+  int opt = 0;
+
+  cout << "\nQuem e o assassino?\n";
+  cout << "1 - Eleanor\n2 - Arthur\n3 - Edward\n4 - Violet\n5 - Alfred\n";
+
+  cin >> opt;
+
+  if(opt == 4){
+    cout << "\nSherlock observa Violet em silencio...\n";
+    cout << "Ela sorri.\n";
+    
+    bestEnding();
+  }
+  else{
+    cout << "\nHolmes fecha os olhos.\n";
+    cout << "A acusacao nao se sustenta.\n";
+  }
+}
 void kitchenMenu(TabelaHash &table, Grafo &graph,Clue inventory[], int &totalClues, int &realCluesSolved){ //Menu da cena da cozinha
   int opt = 0;
   
@@ -667,25 +996,6 @@ void kitchenMenu(TabelaHash &table, Grafo &graph,Clue inventory[], int &totalClu
         cout << "Investigação encerrada." << endl;
     }
   } while(opt != 0);
-}
-void accusationMenu(){ //Cena de acusação
-  int opt = 0;
-
-  cout << "\nQuem e o assassino?\n";
-  cout << "1 - Eleanor\n2 - Arthur\n3 - Edward\n4 - Violet\n5 - Alfred\n";
-
-  cin >> opt;
-
-  if(opt == 4){
-    cout << "\nSherlock observa Violet em silencio...\n";
-    cout << "Ela sorri.\n";
-    
-    bestEnding();
-  }
-  else{
-    cout << "\nHolmes fecha os olhos.\n";
-    cout << "A acusacao nao se sustenta.\n";
-  }
 }
 
 //---------------[Criações]---------------
