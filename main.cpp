@@ -305,7 +305,6 @@ void showDeduction(Grafo &graph, string clueKey){
 //---------------[História]---------------
 void introStory(){
   cout << "===== INVESTIGACAO POLICIAL =====" << endl;
-  cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
 
   cout << "Londres -- 15 de Janeiro de 2010, 22:20" << endl;
@@ -414,24 +413,11 @@ void crimeScene(){
   cout << "Sherlock permanece em silêncio. Observando. Calculando." << endl;
   cout << "Para prosseguir apere Enter" << endl;
   next();
-
-  while(op!=0){
-    cout << "Pistas:" << endl;
-    cout << " 1. Pista A" << endl;
-    cout << " 2. Pista B" << endl;
-    cout << " 3. Pista C" << endl;
-    cout << " 4. Pista D" << endl;
-    cout << " 5. Pista E" << endl;
-    cout << " 6. Pista F" << endl;
-    cout << " 0. Se retirar" << endl;
-    cin<<op;
-
-    switch(op){
-      case 1:
-        
-    }
-  }
   
+  cout<<"=== Sherlock ==="<<endl;
+  cout << "— Vamos conversar um pouco com nossos suspeitos…" << endl;
+  cout << "\nPara prosseguir aperte Enter..." << endl;
+  next();
   
 }
 
@@ -447,11 +433,13 @@ void eleanorInterrogation(){
   cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
   op = -1;
-  while(op!=0){
+  do{
     cout << "Perguntas:" << endl;
     cout<<" 1. Como era sua relacao com seu marido?" << endl;
-    cout <<" 2. A senhora suspeitava de traicao?" << endl;
-    cout <<" 3. Onde estava durante o assassinato?" << endl;
+    cout <<" 2. Onde estava durante o assassinato?" << endl;
+    if(){
+      cout <<" 3. A senhora suspeitava de traicao?" << endl;
+    }
     cout<<" 0. Se retirar"<<endl;
     cin>>op;
 
@@ -469,7 +457,6 @@ void eleanorInterrogation(){
         cout << "-- Vivia voltando tarde do trabalho." << endl;
         cout << "\nPara prosseguir aperte Enter..." << endl;
         next();
-        cout<<"=== ELEANOR WHITMORE ==="<<endl;
         cout << "Ela evita olhar diretamente para Holmes." << endl;
         cout << "\nPara prosseguir aperte Enter..." << endl;
         next();
@@ -514,7 +501,7 @@ void eleanorInterrogation(){
         cout<<"Tente novamente"<<endl;
         break;
     }
-  }
+  }while(op!=0);
 }
 void arthurInterrogation(){
   cout << endl << "=== FILHO MAIS VELHO -- ARTHUR WHITMORE ===" << endl;
@@ -527,7 +514,7 @@ void arthurInterrogation(){
   cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
   op = -1;
-  while(op!=0){
+  do{
     cout << "Perguntas:" << endl;
     cout<<" 1. Voce queria assumir a empresa?" << endl;
     cout<<" 2. Seu pai pretendia mudar o testamento?" << endl;
@@ -603,7 +590,7 @@ void arthurInterrogation(){
         cout<<"Tente novamente"<<endl;
         break;
     }
-  }
+  }while(op!=0);
 }
 void edwardInterrogation(){
   cout << endl << "=== FILHO DO MEIO -- EDWARD WHITMORE ===" << endl;
@@ -616,7 +603,7 @@ void edwardInterrogation(){
   cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
   op = -1;
-  while(op!=0){
+  do{
     cout << "Perguntas:" << endl;
     cout<<" 1. Voce tinha problemas com seu pai?" << endl;
     cout<<" 2. Onde estava durante o assassinato?" << endl;
@@ -691,7 +678,7 @@ void edwardInterrogation(){
         cout<<"Tente novamente"<<endl;
         break;
     }
-  }
+  }while(op!=0);
 }
 void violetInterrogation(){
   cout << endl << "=== FILHA CACULA -- VIOLET WHITMORE ===" << endl;
@@ -702,7 +689,7 @@ void violetInterrogation(){
   cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
   op = -1;
-  while(op!=0){
+  do{
     cout << "Perguntas:" << endl;
     cout<<" 1. Voce gostava do seu pai?" << endl;
     cout<<" 2. Esta triste?" << endl;
@@ -770,7 +757,7 @@ void violetInterrogation(){
         cout<<"Tente novamente"<<endl;
         break;
     }
-  }
+  }while(op!=0);
 }
 void alfredInterrogation(){
   cout << endl << "=== MORDOMO -- ALFRED ===" << endl;
@@ -783,7 +770,7 @@ void alfredInterrogation(){
   cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
   op = -1;
-  while(op!=0){
+  do{
     cout << "Perguntas:" << endl;
     cout<<" 1. Como Raymond o tratava?" << endl;
     cout<<" 2. O senhor ouviu algo?" << endl;
@@ -835,7 +822,7 @@ void alfredInterrogation(){
         cout<<"Tente novamente"<<endl;
         break;
     }
-  }
+  }while(op!=0);
 }
 void interrogationScene(){
   cout << endl << "=== INTERROGATORIO ===" << endl;
@@ -942,22 +929,40 @@ void accusationMenu(){ //Cena de acusação
   }
 }
 void kitchenMenu(TabelaHash &table, Grafo &graph,Clue inventory[], int &totalClues, int &realCluesSolved){ //Menu da cena da cozinha
-  int opt = 0;
-  
+  op = -1;
   do{
     cout<<"[COZINHA]\n"<< endl;
     
-    cout << "1 - Examinar faca\n2 - Examinar corte\n3 - Examinar cabo da faca\n4 - Examinar corpo da vitma\n5 - Examinar vestigios na porta da cozinha\n6 - Falar com empregados\n7 - Examinar lixeira\n8 - Ver pistas\n9 - Acusacao\n0 - Encerrar Investigacao" << endl;
-    cin >> opt;
+    cout << "Pistas:" << endl;
+    cout << " 1. Faca Ensaguentada" << endl;
+    cout << " 2. Lenço ensanguentado e com ferrugem" << endl;
+    cout << " 3. Pista C" << endl;
+    cout << " 4. Pista D" << endl;
+    cout << " 5. Pista E" << endl;
+    cout << " 6. Pista F" << endl;
+    cout << " 0. Se retirar" << endl;
+
+    cin >> op;
     cin.ignore();
       
-    switch(opt){
-      case 1:
-        investigateClue(table, graph, "P1",inventory, totalClues, realCluesSolved);
+    switch(op){
+      case 1: // Pista faca
+        op = -1;
+        cout << "Faca ensaguentada:" << endl;
+        cout<< "1. Examinar cabo da faca"<<endl;
+        cout<< "2. Examinar lâmina da faca"<<endl;
+        cin>>op;
+        if(op == 1){
+            investigateClue(table, graph, "P3",inventory, totalClues, realCluesSolved);    
+        }else if(op == 2){
+            investigateClue(table, graph, "P2",inventory, totalClues, realCluesSolved);
+        }else{
+            cout<<"Opção inválida"<<endl;
+        }
         break;
           
       case 2:
-        investigateClue(table, graph, "P2",inventory, totalClues, realCluesSolved);
+        investigateClue(table, graph, "P4",inventory, totalClues, realCluesSolved);    
         break;
           
       case 3:
@@ -995,36 +1000,35 @@ void kitchenMenu(TabelaHash &table, Grafo &graph,Clue inventory[], int &totalClu
       default:
         cout << "Investigação encerrada." << endl;
     }
-  } while(opt != 0);
+  } while(op != 0);
 }
 
 //---------------[Criações]---------------
-void creatClues(TabelaHash &table){
+void createClues(TabelaHash &table){
   //----------[Pista 1]----------
-  Clue knife;
-  knife.idClue = 1;
-  knife.title = "Faca";
-  knife.description = "A lâmina ainda possui sangue. Porém, quase não existem impressões digitais. Pequenas marcas de tecido podem ser vistas próximas ao cabo.";
+//   Clue knife;
+//   knife.idClue = 1;
+//   knife.title = "Faca";
+//   knife.description = "A lâmina ainda possui sangue. Porém, quase não existem impressões digitais. Pequenas marcas de tecido podem ser vistas próximas ao cabo.";
   
-  knife.question = "O que a ausencia parcial de digitais indica?";
-  knife.options[0] = "A arma foi trocada";
-  knife.options[1] = "O assassino tentou limpar a faca";
-  knife.options[2] = "A vitima segurou a faca";
-  knife.options[3] = "O sangue foi plantado";
+//   knife.question = "O que a ausencia parcial de digitais indica?";
+//   knife.options[0] = "A arma foi trocada";
+//   knife.options[1] = "O assassino tentou limpar a faca";
+//   knife.options[2] = "A vitima segurou a faca";
+//   knife.options[3] = "O sangue foi plantado";
 
-  knife.correctReponse = 2;
-  knife.realClue = true;
-  table.input("P1", knife);
+//   knife.correctReponse = 2;
+//   knife.realClue = true;
+//   table.input("P1", knife);
   
   
   
   //----------[Pista 2]----------
   Clue positionKnife;
   positionKnife.idClue = 2;
-  positionKnife.title = "Posicao da Faca";
-  positionKnife.description = "O golpe entrou em um ângulo incomum...a perfuração veio de baixo para cima. A vítima aparentemente estava em pé.";
+  positionKnife.title = "Angulo da Faca";
+  positionKnife.description = "O golpe entrou em um ângulo incomum... Isso significa que o assassino era significativamente mais baixo que o Raymond OU que ele golpeou a vítima por trás enquanto ela estava sentada.";
   positionKnife.question = "O que voce conclui sobre quem realizou esse golpe?";
-  
   positionKnife.options[0] = "O assassino era mais alto";
   positionKnife.options[1] = "O assassino atacou a distancia";
   positionKnife.options[2] = "O assassino era mais baixo";
@@ -1040,7 +1044,7 @@ void creatClues(TabelaHash &table){
   Clue knifeHandle;
   knifeHandle.idClue = 3;
   knifeHandle.title = "Cabo com microfissuras";
-  knifeHandle.description = "A forca aplicada na faca indica uma adrenalina alta, a pessoa estava em extrema tensao.";
+  knifeHandle.description = "Existem microfissuras na estrutura de polímero do cabo.\nIsso indica que quem a segurou aplicou uma força excessiva induzida por tensão extrema, adrenalina e forte obsessão emocional.";
   knifeHandle.question = "Que tipo de estado emocional o assassino demonstrava?";
   knifeHandle.options[0] = "Raiva";
   knifeHandle.options[1] = "Ansiedade";
@@ -1056,16 +1060,15 @@ void creatClues(TabelaHash &table){
   //----------[Pista Falsa 1]----------
   Clue tissue;
   tissue.idClue = 4;
-  tissue.title = "Lenço da esposa";
-  tissue.description = "Uma espécie de lenço feminino, manchado de sangue, encontrado proximo ao corpo. Voce sente um cheiro de perfume quando aproxima ele em seu rosto.";
-  tissue.question = "A quem esse lenço pertence?";
-  
-  tissue.options[0] = "Violet";
-  tissue.options[1] = "Eleanor";
-  tissue.options[2] = "A empregada";
-  tissue.options[3] = "Uma visitante";
+  tissue.title = "Lenço ensanguentado e com ferrugem";
+  tissue.description = "Um lenço de seda fina com o monograma 'E.W.', encontrado muito próximo à faca e parcialmente ensanguentado. Ao inspecionar a fundo, nota-se uma mancha escura de ferrugem de metal velho.";
+  tissue.question = "";
+  tissue.options[0] = "";
+  tissue.options[1] = "";
+  tissue.options[2] = "";
+  tissue.options[3] = "";
 
-  tissue.correctReponse = 2;
+  tissue.correctReponse = -1;
   table.input("P4", tissue);
   
   
@@ -1073,10 +1076,9 @@ void creatClues(TabelaHash &table){
   //----------[Pista Falsa 2]----------
   Clue cigarette;
   cigarette.idClue = 5;
-  cigarette.title = "Cigarros do Mordomo";
-  cigarette.description = "Cinzas de cigarro foram encontradas próximas à entrada da cozinha. A bituca de cigarro ainda esta morna";
+  cigarette.title = "Cigarros Turcos";
+  cigarette.description = "Uma bituca de cigarro encontrada perto da porta da cozinha. É de uma marca cara de tabaco turco com aroma adocicado de baunilha e filtro dourado.";
   cigarette.question = "Quem possui o hábito de fumar?";
-  
   cigarette.options[0] = "Arthur";
   cigarette.options[1] = "Edward";
   cigarette.options[2] = "Alfred";
@@ -1118,6 +1120,22 @@ void creatClues(TabelaHash &table){
 
   medication.correctReponse = 3;
   table.input("P7", medication);
+  
+  
+  //----------[Pista Falsa 5]----------
+  Clue cheating;
+  cheating.idClue = 8;
+  cheating.title = "Traição";
+  cheating.description = "Eleanor afirma que suspeitava de uma traição vinda do marido.";
+  cheating.question = "";
+  cheating.options[0] = "";
+  cheating.options[1] = "";
+  cheating.options[2] = "";
+  cheating.options[3] = "";
+
+  cheating.correctReponse = -1;
+  table.input("P8", cheating);
+  
 }
 void createConnectionsClue(Grafo &graph){
   graph.addNo("P1", 1);
@@ -1148,13 +1166,12 @@ int main() {
 
   int realCluesSolved = 0;
 
-  creatClues(table);
+  createClues(table);
   createConnectionsClue(gInvestigation);
 
   introStory();
   crimeScene();
   interrogationScene();
-
   kitchenMenu(table, gInvestigation, inventory, totalClues, realCluesSolved);
 
   return 0;
