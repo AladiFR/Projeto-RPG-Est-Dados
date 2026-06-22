@@ -212,7 +212,6 @@ class Grafo{
     }
 
 };
-void showDeduction(Grafo &graph, string clueKey);
 
 //---------------[Inventário]---------------
 void addInventory(Clue inventory[],int &totalClues,Clue clue){
