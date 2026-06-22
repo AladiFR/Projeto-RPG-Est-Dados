@@ -7,7 +7,8 @@
 
 using namespace std;
 
-const int MAX_VERTICES = 5;
+const int MAX_VERTICES = 100;
+
 int op;
 
 // ---------------[Utilidades]---------------
@@ -45,7 +46,7 @@ void next(){ //Função pra pausa
 //---------------[Classes]---------------
 class TabelaHash{
   private:
-    static const int MAX = 10;
+    static const int MAX = 999;
 
     struct No{ //Estrutura de entrada
       string key;
@@ -61,7 +62,7 @@ class TabelaHash{
     };
 
     int funcaoHash(string key) { //Pega o valor em ASCII e cria uma chave a partir do número feito, ou seja, pega o ascii de "P1"
-      int sum = 0;
+      unsigned int sum = 0;
 
       for (int i = 0; i < key.size(); i++) {
         sum = (sum * 31) + key[i];
@@ -110,6 +111,29 @@ class TabelaHash{
       return null;
     }
 
+    Clue searchId(int id) {
+      for(int i = 0; i < MAX; i++){
+        No* atual = tableHash[i];
+
+        while(atual != NULL){
+          if(atual->value.idClue == 0){
+            return atual->value;
+          }
+
+          atual = atual->next;
+        }
+      }
+
+      Clue clueEmpty;
+      clueEmpty.idClue = -1;
+      clueEmpty.title = "Pensamento Obscuro";
+      clueEmpty.description = "";
+      clueEmpty.descoberta = false;
+      clueEmpty.resolvida = false;
+    
+      return clueEmpty;
+    }
+
     void remover(string key) {
       int position = funcaoHash(key);
       No* temp = tableHash[position];
@@ -130,6 +154,7 @@ class TabelaHash{
       }
     }
 };
+
 class Grafo{
   public:
       Grafo(){
@@ -148,7 +173,41 @@ class Grafo{
 
     No* vertices[MAX_VERTICES];
     int numVertices;
+    
+    void dfsRaciocinio(No* atual, bool visitados[], TabelaHash &table){ //Busca em Profundidade
+      if(atual == NULL) return;
 
+      int index = -1;//Achando index do nó e marcar como visitado.
+      for(int i = 0; i < numVertices; i++){
+        if(vertices[i] == atual){
+          index = i;
+          return;
+        }
+      }
+
+      //Não encontrou ou já foi visitado.
+      if(index == -1 || visitados[index]) return;
+
+      visitados[index] = true;
+
+      //Busca estado atual da pista TabelaHash a pista.
+      Clue clueGame = table.search(atual->idClue);
+
+      if(clueGame.descoberta){
+        cout << " -> " << atual->idClue;
+
+        if(clueGame.resolvida){
+          cout << "(Concluída)";
+        } else{ //Fim raciocínio.
+          cout << " (Pendente de analise)";
+          return;
+        }
+
+        for(int i = 0; i < atual->numConnections; i++){
+          dfsRaciocinio(atual->connection[i], visitados, table);
+        }
+      }
+    };
   public:
     No* addNo(string idClue, int nivel){ //Criação do nó(Níveis)
 
@@ -191,27 +250,29 @@ class Grafo{
         }
     }
     
-    void showReasoningLine(string clueKey){ //Exibindo linha de raciocínio visualmente com grafo
+    //AVALIAR:
+    //A description das pistas precisam ser exatamente a dedução que Sherlock fará 
+    //(ex: "A faca foi parcialmente limpa, sugerindo tentativa de ocultar o crime.").
+    void showReasoningLine(string clueKey, TabelaHash &table){
+      bool visitados[MAX_VERTICES] = {false};
+
       for(int i = 0; i < numVertices; i++){
-          if(vertices[i]->idClue == clueKey){
-              cout << "\nLinha de raciocinio:\n\n";
-
-              cout << vertices[i]->idClue;
-
-              No* current = vertices[i];
-
-              while(current->numConnections > 0){
-                  current = current->connection[0];
-                  cout << " -> " << current->idClue;
-              }
-
-              cout << endl;
-              return;
-          }
+        if(vertices[i]->idClue == clueKey){
+          cout << "\n=== PALACIO MENTAL: LINHA DE RACIOCINIO ===" << endl;
+          cout << "Origem do pensamento:";
+          
+          dfsRaciocinio(vertices[i], visitados, table);
+          
+          cout << "\n===========================================" << endl;
+          return;
+        }
       }
+      cout << "\n[Sherlock nao possui conexoes sobre essa pista ainda.]" << endl;
     }
 
 };
+
+void showDeduction(Grafo &graph, TabelaHash& table, string clueKey);
 
 //---------------[Inventário]---------------
 void addInventory(Clue inventory[],int &totalClues,Clue clue){
@@ -265,7 +326,11 @@ bool checkAnswer(Clue &pista){ //Verifica Pista
 
   return false;
 }
-void investigateClue(TabelaHash &table, Grafo &graph,string key, Clue inventory[], int &totalClues, int &realCluesSolved){
+void showDeduction(Grafo &graph, TabelaHash &table, string clueKey){   
+  cout << "\n[Holmes analisa as conexoes mentais]\n";
+  graph.showReasoningLine(clueKey, table);
+}
+void investigateClue(TabelaHash &table, Grafo &graph, string key, Clue inventory[], int &totalClues, int &realCluesSolved){
   limparTela();
   Clue clue = table.search(key);
 
@@ -288,36 +353,14 @@ void investigateClue(TabelaHash &table, Grafo &graph,string key, Clue inventory[
     bool correct = checkAnswer(clue);
     if(correct && clue.realClue){
       realCluesSolved++;
-      showDeduction(graph, key);
+      showDeduction(graph, table, key); 
     }
+
+    cout << "\n[Holmes liga essa pista ao assassinato]\n";
+
+    //cout << "\nProgresso da investigacao: " << realCluesSolved << "/3 pistas principais.\n";
+    table.input(key, clue);
   }
-
-  cout << "\n[Holmes liga essa pista ao assassinato]\n";
-
-  //cout << "\nProgresso da investigacao: " << realCluesSolved << "/3 pistas principais.\n";
-  table.input(key, clue);
-}
-// AVALIAR: URGENTE
-void showDeduction(Grafo &graph, string clueKey){
-    
-    cout << "\n[Holmes analisa as conexoes mentais]\n";
-    graph.showReasoningLine(clueKey);
-
-
-    if(clueKey == "P1"){
-        cout << "A faca foi parcialmente limpa.\n";
-        cout << "Isso sugere tentativa de esconder o assassinato.\n";
-    }
-
-    else if(clueKey == "P2"){
-        cout << "O golpe veio de baixo para cima.\n";
-        cout << "O assassino provavelmente era menor.\n";
-    }
-
-    else if(clueKey == "P3"){
-        cout << "A violencia foi emocional.\n";
-        cout << "Nao foi um assassinato frio.\n";
-    }
 }
 
 //---------------[História]---------------
@@ -449,11 +492,11 @@ void eleanorInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int
   Clue frasco_antidepressivo = table.search("frasco_antidepressivo");
   Clue sintomas_eleanor = table.search("sintomas_eleanor");
 
-  op = -1;
+  int op = -1;
   do{
     // Adicionar as análise de comportamento e características físicas
     cout << endl << "=== A ESPOSA -- ELEANOR WHITMORE ===" << endl;
-    cout<<"=== Características ==="<<endl;
+    cout <<"=== Características ==="<<endl;
     cout << "Elegante." << endl;
     cout << "Olhos cansados." << endl;
     cout << "Maos tremulas.\n" << endl;
@@ -480,6 +523,7 @@ void eleanorInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int
     }
     cout<<" 0. Se retirar"<<endl;
     cin>>op;
+    cin.ignore();
 
     switch(op){
       case 1:
@@ -499,6 +543,7 @@ void eleanorInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int
         cout << "Ela evita olhar diretamente para Holmes, projetando uma postura defensiva que esconde um ressentimento profundo." << endl;
         cout << "\nPara prosseguir aperte Enter..." << endl;
         next();
+
         investigateClue(table, graph, "suspeita_traicao", inventory, totalClues, realCluesSolved);
       break;
     
@@ -569,7 +614,7 @@ void arthurInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
 
   // Criar uma pista para o Alibi dele
   
-  op = -1;
+  int op = -1;
   int continuacao = 0;
   do{
     // Adicionar as análise de comportamento e características físicas
@@ -599,6 +644,7 @@ void arthurInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
     }
     cout<<" 0. Se retirar"<<endl;
     cin>>op;
+    cin.ignore();
 
     switch(op){
       case 1:
@@ -697,7 +743,7 @@ void edwardInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
   Clue frasco_antidepressivo = table.search("frasco_antidepressivo");
   Clue cachimbo_alfredo = table.search("cachimbo_alfredo");
   
-  op = -1;
+  int op = -1;
   
   do{
     cout << endl << "=== FILHO DO MEIO -- EDWARD WHITMORE ===" << endl;
@@ -717,6 +763,7 @@ void edwardInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
     cout<<" 3. Voce ouviu alguma coisa suspeita?" << endl;
     cout<<" 0. Se retirar"<<endl;
     cin>>op;
+    cin.ignore();
 
     switch(op){
       case 1:
@@ -806,7 +853,7 @@ void violetInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
   cout << "Calma demais.\n" << endl;
   
   
-  op = -1;
+  int op = -1;
   do{
     cout << "Perguntas:" << endl;
     cout<<" 1. Como era sua relacao com seu pai?" << endl; 
@@ -827,6 +874,7 @@ void violetInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
     }
     cout<<" 0. Se retirar"<<endl;
     cin>>op;
+    cin.ignore();
 
     switch(op){
       case 1:
@@ -945,10 +993,12 @@ void violetInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
     }
   }while(op!=0);
 }
+
+// ===============[Interrogatório Alfred]==============
 void alfredInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int &totalClues, int &realCluesSolved){
   Clue cigarros_turcos = table.search("cigarros_turcos");
 
-  op = -1;
+  int op = -1;
   int continuacao = 0;
   do{
     cout << endl << "=== MORDOMO -- ALFRED ===" << endl;
@@ -1056,14 +1106,15 @@ void alfredInterrogation(TabelaHash &table, Grafo &graph, Clue inventory[], int 
     }
   }while(op!=0);
 }
-void interrogationScene(){
+
+void interrogationScene(TabelaHash &table, Grafo &graph, Clue inventory[], int &totalClues, int &realCluesSolved){
   cout << endl << "=== INTERROGATORIO ===" << endl;
   cout << "\nPara prosseguir aperte Enter..." << endl;
   next();
   
-  op = -1;
+  int op = -1;
   while(op != 0){
-    limparTela();
+    //limparTela();
     cout<<"Suspeitos: "<<endl;
     cout<<" 1. Eleanor - Esposa"<<endl;
     cout<<" 2. Arthur - Filho mais velho"<<endl;
@@ -1075,19 +1126,19 @@ void interrogationScene(){
 
     switch(op){
       case 1:
-        eleanorInterrogation();
+        eleanorInterrogation(table, graph, inventory, totalClues, realCluesSolved);
         break;
       case 2:
-        arthurInterrogation();
+        arthurInterrogation(table, graph, inventory, totalClues, realCluesSolved);
         break;
       case 3:
-        edwardInterrogation();
+        edwardInterrogation(table, graph, inventory, totalClues, realCluesSolved);
         break;
       case 4:
-        violetInterrogation();
+        violetInterrogation(table, graph, inventory, totalClues, realCluesSolved);
         break;
       case 5:
-        alfredInterrogation();
+        alfredInterrogation(table, graph, inventory, totalClues, realCluesSolved);
         break;
       case 0:
         cout<<"Saindo"<<endl;
@@ -1165,7 +1216,7 @@ void accusationMenu(){ //Cena de acusação
 
 //---------------[Menu Cozinha]---------------
 void kitchenMenu(TabelaHash &table, Grafo &graph,Clue inventory[], int &totalClues, int &realCluesSolved){ //Menu da cena da cozinha
-  op = -1;
+  int op = -1;
   int sub_op;
   do{
     limparTela();
@@ -1248,15 +1299,15 @@ void kitchenMenu(TabelaHash &table, Grafo &graph,Clue inventory[], int &totalClu
 
 //---------------[Menu INVESTIGACAO]---------------
 void menuManager(TabelaHash &table, Grafo &graph, Clue inventory[], int &totalClues, int &realCluesSolved){
-  op = -1;
-  TabelaHash t;
-  Grafo gInvestigation;
-
+  int op = -1;
+  //TabelaHash t;
+  //Grafo gInvestigation;
+  
   do{
     limparTela();
     cout << "\n=== MENU DE INVESTIGACAO ===" << endl; 
-    cout << "1. Interrogar Suspeitos" << endl;
-    cout << "2. Investigar Cena do Crime" << endl;
+    cout << "1. Investigar Cena do Crime" << endl;
+    cout << "2. Interrogar Suspeitos" << endl;
     cout << "3. Fazer uma acusacao" << endl;
     cout << "0. Desistir" << endl;
     cout << "Opcao: ";
@@ -1264,10 +1315,10 @@ void menuManager(TabelaHash &table, Grafo &graph, Clue inventory[], int &totalCl
 
     switch(op){
       case 1:
-        kitchenMenu(t, gInvestigation, inventory, totalClues, realCluesSolved);
+        kitchenMenu(table, graph , inventory, totalClues, realCluesSolved);
         break;
       case 2:
-        interrogationScene();
+        interrogationScene(table, graph, inventory, totalClues, realCluesSolved);
         break;
       case 3:
         if(realCluesSolved >= 3){
@@ -2041,7 +2092,7 @@ void createConnectionsClue(Grafo &graph) {
   graph.addConnections(23, 7);  // alibi_violet -> passos_leves
   graph.addConnections(9, 6);   // vinho_unhas -> cheiro_lavanda
   graph.addConnections(9, 7);   // vinho_unhas -> passos_leves
-}
+};
 
 //---------------[Main]---------------
 int main() {
@@ -2059,7 +2110,7 @@ int main() {
   
   introStory();
   crimeScene();
-  interrogationScene();
+  interrogationScene(table, gInvestigation, inventory, totalClues, realCluesSolved);
   menuManager(table, gInvestigation, inventory, totalClues, realCluesSolved);
 
   cout<< "\n=== FIM DE JOGO ===\n";
